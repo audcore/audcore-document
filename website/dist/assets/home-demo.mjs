@@ -2,6 +2,7 @@ import {MixerGL} from './home-demo-gl.mjs';
 import {createState,applyScene,frame,scenes,toggleChannel} from './home-demo-scene.mjs';
 import {translate} from './home-demo-i18n.mjs';
 import {extraFeatures} from './home-feature-catalog.mjs';
+import {canSendTo} from './home-demo-signal.mjs';
 
 const root=document.querySelector('[data-home-demo]');
 if(root) start(root);
@@ -116,7 +117,7 @@ export function start(root) {
     if(hit.kind==='polarity') {c.phase=!c.phase;announce(`${c.name}极性${c.phase?'反转':'恢复'}`);}
     if(hit.kind==='link') choose(hit,{title:'通道编组',value:c.group||'',values:[['','不编组'],['A1','A1 · 联动组 1'],['A2','A2 · 与 A1 互斥'],['B1','B1 · 联动组 2']]},value=>{c.group=value||null;announce('同组联动，同字母不同组互斥。点击通道圆形开关试试。');});
     if(hit.kind==='add') choose(hit,{title:'添加效果器',values:[['','选择效果器'],...['静音降噪','去齿音','抬升压缩','组合混响','动态均衡','输出限制','Aud2A'].map(v=>[v,translate(v,state.language)])]},value=>{if(value&&!c.fx.includes(value)&&c.fx.length<6)c.fx.push(value);closeOptions();announce('已添加 '+translate(value,state.language));});
-    if(hit.kind==='send'||hit.kind==='sendAdd') choose(hit,{title:'通道发送',value:hit.value||'',values:[['','不发送'],...state.channels.filter(peer=>peer.id>c.id).map(peer=>[peer.name,translate(peer.name,state.language)]),['输出 1/2',translate('输出 1/2',state.language)],['网页源',translate('网页源',state.language)]]},value=>{
+    if(hit.kind==='send'||hit.kind==='sendAdd') choose(hit,{title:'通道发送',value:hit.value||'',values:[['','不发送'],...state.channels.filter(peer=>canSendTo(state.channels,c,peer)).map(peer=>[peer.name,translate(peer.name,state.language)]),['输出 1/2',translate('输出 1/2',state.language)],['网页源',translate('网页源',state.language)]]},value=>{
       if(hit.value)c.sends=c.sends.filter(v=>v!==hit.value);
       if(value&&!c.sends.includes(value)&&c.sends.length<3)c.sends.push(value);
       closeOptions();announce('演示发送已更新。');

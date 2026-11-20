@@ -2,6 +2,7 @@ import {palette as p} from './home-skin-data.mjs';
 import {muteGroupChanges} from './home-mute-groups.mjs';
 import {translate} from './home-demo-i18n.mjs';
 import {presets,roleNames,effectNames} from './home-demo-presets.mjs';
+import {channelAmplitudes,meterPosition} from './home-demo-signal.mjs';
 
 // Port of the default console's shared geometry, not an alternate mixer skin.
 export const STRIP = 74, STEP = 76, HEAD = 40, WIDTH = 422;
@@ -78,12 +79,6 @@ export function sideControls(b) {
   }
   return [];
 }
-export function signal(time,index) {
-  // Deterministic speech/music-like envelopes. Never read a microphone or device.
-  const syllable=Math.max(0,Math.sin(time*4.9+index*1.7));
-  const phrase=.35+.65*Math.max(0,Math.sin(time*.83+index));
-  return .16+.65*syllable*phrase+.08*Math.sin(time*13+index)**2;
-}
 export function frame(state,time=0) {
   const width=Math.max(WIDTH,HEAD+2+state.channels.length*STEP);
   const commands=[], hits=[];
@@ -150,6 +145,7 @@ export function frame(state,time=0) {
     return {commands,hits,width,height:state.height};
   }
   const boxes=geometry(state.height,state.channels.length);
+  const amplitudes=channelAmplitudes(state,time);
   for(const b of boxes) {
     const c=state.channels[b.id], x=b.x, col=c.color;
     rect(x,2,STRIP,b.h,p.surface_controls,3);
@@ -167,10 +163,11 @@ export function frame(state,time=0) {
     }
     const mono=c.role==='microphone';
     rect(x+(mono?10:8.5),b.trackY,mono?6:9,b.trackH,p.surface_track,3);
-    const level=c.mute?0:Math.max(0,Math.min(1,signal(time,b.id)+c.gain/72));
     const meterWidth=mono?4:3;
     for(let side=0;side<(mono?1:2);side++) {
-      const ht=Math.max(meterWidth,(b.trackH-2)*(level-side*.035));
+      const level=meterPosition(amplitudes[b.id][side]);
+      if(level===0)continue;
+      const ht=meterWidth+(b.trackH-2-meterWidth)*level;
       rect(x+(mono?11:9.5+side*4),b.trackY+b.trackH-1-ht,meterWidth,ht,col,meterWidth/2);
     }
     for(const db of [0,-12,-24,-36,-48]) text(Math.abs(db),x+19,b.trackY+3+(b.trackH-6)*(1-(db+60)/72)-4,14,8,8,p.text_scale,'right');
