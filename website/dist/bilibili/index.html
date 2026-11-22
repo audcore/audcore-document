@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="在效果器里搜索和播放哔哩哔哩视频，把声音接入混音。声核 FX 版免费，Windows 64 位 VST3 ¥9.9。">
+  <meta name="theme-color" content="#151716">
+  <link rel="canonical" href="https://audcore.utae.cn/bilibili/">
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/music-in.css">
+  <script type="module" src="/assets/vst3-store.mjs"></script>
+  <title>哔哩哔哩 · 视频播放效果器 · 声核 Audcore</title>
+</head>
+<body>
+  <a class="skip" href="#main">跳到正文</a>
+  <header class="site-head wrap">
+    <a class="brand" href="/"><img src="/assets/logo.svg" width="28" height="28" alt="">Audcore 声核</a>
+    <nav aria-label="页面导航">
+      <a href="/effects/">效果器</a>
+      <a href="#free">免费 FX</a>
+    </nav>
+  </header>
+  <main id="main" class="wrap">
+    <section class="details">
+      <h1 class="tagline">哔哩哔哩视频播放效果器</h1>
+      <p class="intro">在效果器窗口里搜索、播放和选集，视频声音直接进入效果器所在通道，可以继续调节音量或接入后续效果器。</p>
+      <div class="hero-actions">
+        <a class="button button-light" href="#free">声核 FX 免费使用</a>
+        <a class="button button-accent" href="#buy">购买 VST3 · ¥9.9</a>
+      </div>
+    </section>
+    <section class="free" id="free">
+      <div>
+        <h2>声核 FX 版免费</h2>
+        <p>打开声核的「在线效果器」，安装「哔哩哔哩」后添加到通道。也可以下载并在声核中打开 <code>.fx.audcore</code> 文件。</p>
+      </div>
+      <a class="button button-light" href="https://github.com/audcore/audcore-fx-bilibili/releases/latest">下载免费 FX</a>
+    </section>
+    <section class="details" aria-labelledby="features-title">
+      <h2 id="features-title">从搜索到播放</h2>
+      <div class="features">
+        <article>
+          <h3>搜索或直接打开</h3>
+          <p>可按关键词搜索，也可输入视频详情链接、BV 号或 AV 号。</p>
+        </article>
+        <article>
+          <h3>在窗口内选集和定位</h3>
+          <p>支持分 P、进度定位和弹幕开关。播放范围为哔哩哔哩提供公开 MP4 播放流的视频。</p>
+        </article>
+      </div>
+    </section>
+    <section class="purchase" id="buy" data-vst3-store="bilibili" aria-labelledby="buy-title">
+      <div>
+        <h2 id="buy-title">购买独立 VST3</h2>
+        <p class="compatibility">适用于 Windows 64 位 VST3 宿主，需要支持 D3D11 视频解码的显卡。宿主需在同一进程中运行插件界面和音频处理。</p>
+        <p class="installation">付款确认后下载单个 <code>.vst3</code> 文件。将文件放入宿主的 VST3 扫描目录后重新扫描。</p>
+      </div>
+      <div class="checkout">
+        <p class="price">¥9.9</p>
+        <div class="order-actions">
+          <button class="button button-accent" id="checkout" type="button" disabled>支付宝购买</button>
+          <button class="button button-secondary" id="check-order" type="button" hidden>确认到账</button>
+          <button class="button button-secondary" id="copy-order" type="button" hidden>复制订单链接</button>
+        </div>
+        <p id="order-status" role="status">付款后即可下载。</p>
+        <noscript><p>请启用 JavaScript 后购买或查询订单。</p></noscript>
+      </div>
+    </section>
+    <section class="privacy" aria-labelledby="privacy-title">
+      <h2 id="privacy-title">购买隐私说明</h2>
+      <p>付款由支付宝处理。声核用订单号、商品版本、金额、付款状态及支付宝交易号核对交易和提供下载。请妥善保存订单链接，以便再次下载。</p>
+    </section>
+  </main>
+  <footer class="site-foot wrap">
+    <a href="/">声核 Audcore</a>
+    <a href="/plugin-guide/">效果器安装说明</a>
+  </footer>
+</body>
+</html>

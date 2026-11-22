@@ -32,6 +32,11 @@ const products = new Map([
     copyPending: false,
     paidText: '已付款 · Aud-R v{version}',
   }],
+  ['bilibili', {
+    page: '/bilibili/',
+    name: '哔哩哔哩',
+    file: 'Bilibili-v{version}.vst3',
+  }],
   ['browser-source', {
     page: '/web-out/',
     name: 'Web-out',
