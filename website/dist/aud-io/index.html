@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="了解 Aud-IO 如何在同一台 Windows 电脑上共享音频，以及如何在声核中接收共享源。"><meta name="theme-color" content="#fafbfc"><title>Aud-IO 共享输入 - 声核 Audcore</title><link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 256x256" type="image/x-icon"><link rel="icon" href="/assets/logo.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/site.css"></head><body>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="了解如何用 Aud-IO 在同一台 Windows 电脑上的声核和其他软件之间共享音频。"><meta name="theme-color" content="#fafbfc"><title>Aud-IO 共享输入输出 - 声核 Audcore</title><link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48 256x256" type="image/x-icon"><link rel="icon" href="/assets/logo.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/site.css"></head><body>
   <a class="skip-link" href="#main">跳到正文</a>
   <header class="site-header wrap">
     <a class="brand" href="/" aria-label="声核首页"><img src="/assets/logo.svg" width="60" height="60" alt=""><span class="brand-name"><strong>声核</strong><span>Audcore</span></span></a>
@@ -7,8 +7,8 @@
   </header>
 <main id="main">
   <section class="page-header wrap">
-    <h1>Aud-IO 共享输入</h1>
-    <p>把同一台 Windows 电脑上其他软件共享的声音接进声核。</p>
+    <h1>Aud-IO 共享输入输出</h1>
+    <p>在同一台 Windows 电脑上的声核和其他软件之间共享音频。</p>
   </section>
   <div class="wrap reading">
     <section class="guide-panel">
@@ -20,10 +20,18 @@
       <h2>在声核里接入共享源</h2>
       <ol>
         <li>打开支持 Aud-IO 的发送软件，让它发布音频并记下共享源名称。</li>
-        <li>在声核的「设置 → 输入输出 → 声音捕获」中确认「Aud-IO 共享输入」已开启。此项默认开启。</li>
+        <li>在声核的「设置 → 输入输出」中确认「Aud-IO 共享输入输出」已开启。开关位于「输入快速切换声道类型」下方，默认开启。</li>
         <li>打开要接入的通道，在输入菜单的「Aud-IO 共享输入」下选择对应的源。</li>
       </ol>
       <p>没有可用共享源时，输入菜单会隐藏这个入口。已选的共享源退出后，用同一个名称重新发布即可恢复接收。</p>
+    </section>
+    <section class="guide-panel">
+      <h2>从声核共享通道声音</h2>
+      <ol>
+        <li>在通道输出菜单选择「Aud-IO」。</li>
+        <li>在支持 Aud-IO 的接收软件中，选择声核输出行显示的共享源。</li>
+      </ol>
+      <p>共享名以 <code>Aud_</code> 开头，优先使用英文通道名，例如 <code>Aud_Lead_Vocals</code>。没有可用英文名时使用通道编号，例如 <code>Aud_Ch_4</code>。重名会自动加编号后缀。</p>
     </section>
     <section class="guide-panel">
       <h2>给开发者</h2>
