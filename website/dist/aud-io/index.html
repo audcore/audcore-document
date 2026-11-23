@@ -14,6 +14,7 @@
     <section class="guide-panel">
       <h2>Aud-IO 是什么？</h2>
       <p>支持 Aud-IO 的软件可以把声音发布为一个有名称的共享源。声核接收后，可以在通道里加效果、混音或录音。同一个共享源也可以供多个接收程序同时使用。</p>
+      <p>共享名是接收端连接和保存路由时使用的名称。同一个音源重新开播时必须沿用原共享名。发送软件每次开播可以另设一个显示别名，例如用 <code>utasing_mix</code> 作为固定共享名，用「歌歌」作为本次别名。别名可以留空。</p>
       <p>音频通过本机共享内存在程序之间传递，无需虚拟声卡或网络连接。</p>
     </section>
     <section class="guide-panel">
@@ -23,7 +24,7 @@
         <li>在声核的「设置 → 输入输出」中确认「Aud-IO 共享输入输出」已开启。开关位于「输入快速切换声道类型」下方，默认开启。</li>
         <li>打开要接入的通道，在输入菜单的「Aud-IO」下选择对应的源。</li>
       </ol>
-      <p>没有可用共享源时，输入菜单会隐藏这个入口。已选的共享源退出后，用同一个名称重新发布即可恢复接收。</p>
+      <p>支持别名的声核版本会在下拉菜单优先显示别名，别名留空时显示共享名。已选的共享源退出后，只要发送方沿用原共享名，换了别名也能恢复接收。没有可用共享源时，输入菜单会隐藏这个入口。</p>
     </section>
     <section class="guide-panel">
       <h2>从声核共享通道声音</h2>
@@ -37,7 +38,7 @@
       <h2>给开发者</h2>
       <p>Aud-IO SDK 提供 C/C++、Python 和 Node.js 接口。</p>
       <p>
-        <a href="https://github.com/audcore/aud-io">查看 Aud-IO SDK 与示例</a>
+        <a href="https://github.com/audcore/aud-io/blob/main/README.zh-CN.md">查看 Aud-IO 接入规范与 SDK 示例</a>
       </p>
     </section>
   </div>
