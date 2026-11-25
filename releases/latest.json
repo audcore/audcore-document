@@ -1,4 +1,4 @@
 {
-  "payload": "{\"version\":\"v0.0.4368\",\"url\":\"https://audcore.utae.cn/releases/v0.0.4368/audcore-setup-v0.0.4368.exe\",\"size\":6534346,\"sha256\":\"041e782ff6d3435864b6ec87238ccc4bd4e6bb00be90b03fcfdde806ec81904c\",\"notes\":\"Aud-IO 输入下拉和选中后的通道标题优先显示分享方设置的别名。声核分享音频时，别名显示为「声核 + 通道名」，例如「声核 混音」。；输入和输出菜单优先列出原生设备，Aud-IO 输出排在网页源之前。；媒体播放 v1.13.0 默认播完当前曲目后停止。再次点击播放可从头重播，也可以手动切到下一首。已安装的用户可在「在线效果器」中更新。；英文界面完整显示缓冲设置名称「Buffer」。\",\"portable\":{\"url\":\"https://audcore.utae.cn/releases/v0.0.4368/audcore-portable.exe\",\"size\":13785088,\"sha256\":\"d83cbd52be1552292f33d5ef7c0410bbd3d5f54cd9680ca90ad31b47298a13a5\"}}",
-  "signature": "a28fzePCpVl3rOP0/ZJeOBsrMGfTwOr8Of/gmNpiDmjR/fxn3YishY1LzbYlftG63f6YKAsmlG5aF62RgFZDCQ=="
+  "payload": "{\"version\":\"v0.0.4372\",\"url\":\"https://audcore.utae.cn/releases/v0.0.4372/audcore-setup-v0.0.4372.exe\",\"size\":6535784,\"sha256\":\"5386fec0eeda3dd82245027101c483576fd111ba66032e6a2c884bd5677d7c69\",\"notes\":\"修复 Aud-IO 接收共享音频时偶发的爆音。；未命名通道会直接显示所选输入的名称，切换输入时同步更新。；模拟声道名称放不下时会逐级缩写，例如从「Analogue 1/2」缩为「Analog 1/2」或「Ana 1/2」。\",\"portable\":{\"url\":\"https://audcore.utae.cn/releases/v0.0.4372/audcore-portable.exe\",\"size\":13787648,\"sha256\":\"2e500e90f3aab1b8e66024b29692eaa68b3c88ac30a942b448fcc86d502699da\"}}",
+  "signature": "QIOD3yJuxbhe/B9ZjzJSB72OWG730828JtUJrRTNj2i28x8DbQsjianIsS9ZEbtwfXAQTAU0x5IaZezQk97tDQ=="
 }
