@@ -1,4 +1,4 @@
 {
-  "payload": "{\"version\":\"v0.0.4372\",\"url\":\"https://audcore.utae.cn/releases/v0.0.4372/audcore-setup-v0.0.4372.exe\",\"size\":6535784,\"sha256\":\"5386fec0eeda3dd82245027101c483576fd111ba66032e6a2c884bd5677d7c69\",\"notes\":\"修复 Aud-IO 接收共享音频时偶发的爆音。；未命名通道会直接显示所选输入的名称，切换输入时同步更新。；模拟声道名称放不下时会逐级缩写，例如从「Analogue 1/2」缩为「Analog 1/2」或「Ana 1/2」。\",\"portable\":{\"url\":\"https://audcore.utae.cn/releases/v0.0.4372/audcore-portable.exe\",\"size\":13787648,\"sha256\":\"2e500e90f3aab1b8e66024b29692eaa68b3c88ac30a942b448fcc86d502699da\"}}",
-  "signature": "QIOD3yJuxbhe/B9ZjzJSB72OWG730828JtUJrRTNj2i28x8DbQsjianIsS9ZEbtwfXAQTAU0x5IaZezQk97tDQ=="
+  "payload": "{\"version\":\"v0.0.4395\",\"url\":\"https://audcore.utae.cn/releases/v0.0.4395/audcore-setup-v0.0.4395.exe\",\"size\":6536307,\"sha256\":\"2678311b45b557d23c23b68f609a9ab7b91a04e2c273539229c32db66c59913b\",\"notes\":\"未命名通道优先使用图标名称，例如「唱歌」或「监听」。没有图标名称时，显示所选输入的名称。；修复 Aud-IO 音源停播后恢复时偶尔丢失起音或发出短促杂音的问题。；独立效果器的侧链输入会保留音源的单声道或立体声格式。\",\"portable\":{\"url\":\"https://audcore.utae.cn/releases/v0.0.4395/audcore-portable.exe\",\"size\":13791232,\"sha256\":\"13bf6679be7bf8cb91f8afe8503910ba64da882afd27e6e466477a09fd44c727\"}}",
+  "signature": "zvD46FbRBwdP5LVEvgbYPCOd0gDZrUIsAixs0etO2FzucmmJvCrsqbIYZexN7j3xtUQfJhItsnYWlMe5xyGDAg=="
 }
